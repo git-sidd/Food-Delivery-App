@@ -9,11 +9,13 @@ export default function Home() {
     <div className='flex flex-col relative'>
       <Navbar/>
       <Carousal/>
-      <div className='flex'><Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/></div>
+      <div className='grid grid-cols-1 md:grid-cols-4 items-center justify-center my-2 mx-1 '>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        
+      </div>
       <div className=' '>
           <Footer/>
       </div>

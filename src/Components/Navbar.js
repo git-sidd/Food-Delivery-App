@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom"
+import logo from "../images/logo.png"
 
 
 export default function Navbar() {
@@ -32,8 +33,8 @@ export default function Navbar() {
         </button>
       </div>
       <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-        <div className="flex flex-shrink-0 items-center">
-          <img className="h-8 w-auto" src="https://www.canva.com/design/DAGH2gp7Eh8/vdtBkwB-Y5XO3yGlp4tYYA/view" alt="Your Company"/>
+        <div className="flex flex-shrink-0 items-center justify-center">
+          <img className="md:h-[50px] h-[60px] w-[60px] md:w-[50px] object-contain" height="60px" width="60px" src={logo} alt="Your Company" />
         </div>
         <div className="hidden sm:ml-6 sm:block">
           <div className="flex space-x-4">
