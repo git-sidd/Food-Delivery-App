@@ -28,9 +28,10 @@ export default function Carousal() {
   </div>
   
 </div>
-<div className="  container-fluid absolute bottom-20  flex justify-center" style={{zIndex:"10"}}>
-    <form className="d-flex">
-      <input className="form-control rounded-lg me-2 bg-slate-300 w-[600px]" type="search" placeholder="Search" aria-label="Search"/>
+<div className="  container-fluid absolute bottom-20 md:w-full mx-auto " style={{zIndex:"10"}}>
+    <form className="d-flex mx-auto  
+      md:w-[800px] w-full">
+      <input className="form-control rounded-lg me-2 bg-slate-300" type="search" placeholder="Search" aria-label="Search"/>
       <button className="btn hover:bg-blue-600 bg-blue-400 rounded-lg" type="submit">Search</button>
     </form>
   </div>
