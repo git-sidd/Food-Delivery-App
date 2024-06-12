@@ -14,9 +14,9 @@ import {ApiResponse} from "../Utils/ApiResponse.js"
     //8.check for user creation
     //9.return response
 const registerUser= asyncHandler(async (req,res)=>{
-    const {username,password,email,address,date}=req.body
+    const {name,username,password,email,address,date}=req.body
 
-    if ([username,password,email,address,date].some((field)=>{
+    if ([username,password,email,address,date,name].some((field)=>{
         field?.trim()===""
     })){
         throw new ApiError(400,"Every Field is required")
@@ -30,6 +30,7 @@ const registerUser= asyncHandler(async (req,res)=>{
     }
     const user= await User.create({
         username,
+        name,
         password,
         address,
         email,
