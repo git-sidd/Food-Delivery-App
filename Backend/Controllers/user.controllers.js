@@ -49,4 +49,33 @@ const registerUser= asyncHandler(async (req,res)=>{
 
 
 })
-export {registerUser}
+const loginUser=asyncHandler(async(req,res)=>{
+    const {email,password}=req.body
+
+    if(!email){
+        throw new ApiError(400,"Email is Required")
+    }
+    const user=await User.findOne({email})
+
+    if(!user){
+        throw new ApiError(400,'user not exists')
+    }
+    const isPasswordValid= await user.isPasswordCorrect(password);
+    if (!isPasswordValid){
+        throw new ApiError(400,"Invalid Credentials")
+    }
+    const loggedInUser= await User.findById(user._id).select("-password ")
+    const options={
+        httpOnly:true,
+        secure:true
+    }
+    return res.status(200)
+    .json(
+        new ApiResponse(
+            200,
+            {user:loggedInUser},
+            "User Logged In successfully"
+        )
+    )
+})
+export {registerUser,loginUser}

@@ -113,13 +113,13 @@ export default function Signup() {
             className="form-control bg-gray-300" />
           </div>
 
-          <div className=" flex  gap-5">
+          <div className=" flex  gap-4">
             <button
               className="btn hover:bg-blue-400 bg-blue-600 rounded-lg font-mono font-bold  mb-3"
               type="submit"
              
             >
-              Submit
+              Sign Up
             </button>
             <Link
               to="/login"
