@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+
 
 export default function Signup() {
+  const navigate=useNavigate()
   const [credentials, setcredentials] = useState({name:"",username:"",email:"",password:"",address:""});
   const submitHandler = async (event) => {
   try {
@@ -18,6 +20,8 @@ export default function Signup() {
     console.log(json);
     if(json.success){
       alert("Registered Successfully")
+      navigate("/login")
+
     }
     if(!json.success){
       alert("invalid credentials")

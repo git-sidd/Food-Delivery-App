@@ -13,20 +13,22 @@ export default function Login() {
       headers: {
         "Content-Type": "application/json",
       },
-      
+     
       body: JSON.stringify({email:credentials.email,password:credentials.password}), 
     });
+    
     const json= await response.json();
     console.log(json);
     if(json.success){
-     
+      const token=json.refreshtoken
+      localStorage.setItem('authToken',token)
       navigate("/");
     }
     if(!json.success){
       alert("User doesn't Exists!")
     }
   } catch (error) {
-    alert("Error in Storing Data in DB",error)
+    alert("Enter Valid Credentials",error)
   }
   };
   const onChangeHandler=(event)=>{

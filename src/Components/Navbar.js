@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
+import handleLogout from "../Screens/Logout";
 
 export default function Navbar() {
   return (
@@ -68,17 +69,30 @@ export default function Navbar() {
                 />
                  <Link
                     to="/"
-                    className="rounded-md px-3 py-2 text-sm font-medium hidden sm:block md:block lg:block text-gray-300 hover:bg-gray-700 hover:text-white"
+                    className="rounded-md px-3 py-2 text-sm font-medium hidden sm:block md:block lg:block text-gray-300 bg-gray-900 hover:bg-gray-700 hover:text-white"
                   >
                     Home
                   </Link>
+                  {
+                    (localStorage.getItem("authToken")?
+                    <Link
+                    to="/"
+                    className="rounded-md px-3 py-2 text-sm font-medium hidden sm:block md:block lg:block text-gray-300 bg-gray-900 hover:bg-gray-700 hover:text-white"
+                  >
+                    My Orders
+                  </Link>
+                  :"" )
+                  }
               </div>
               <div className="hidden sm:ml-6 sm:block  justify-around">
                 <div className="flex space-x-4 mx-auto my-auto ">
                   {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                  
                   <div className="flex items-center justify-center gap-3 mt-1">
-                    <Link
+                  {(!localStorage.getItem('authToken'))?
+                    (
+                      <div className="flex items-center justify-center gap-3 mt-1"> 
+                      <Link
                       to="/login"
                       className="rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
@@ -90,6 +104,19 @@ export default function Navbar() {
                     >
                       SignUP
                     </Link>
+                    </div>
+                    ):(<div className="flex items-center justify-center gap-3 mt-1">
+                      <Link
+                      to="/login"
+                      onClick={handleLogout}
+                      className="rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-red-700 hover:bg-red-700 hover:text-white"
+                    >
+                      Logout
+                    </Link>
+                    </div>)}
+                    {
+
+                    }
                   </div>
                 </div>
               </div>
