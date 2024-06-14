@@ -48,4 +48,8 @@ app.use(express.urlencoded({extended: true, limit: "16kb"})) // Add this middlew
 //import route from user.routes.js
 import userRouter from "../Backend/Routes/user.routes.js"
 app.use("/api/v1/users",userRouter)
+
+
+import FoodData from "./Routes/foodData.routes.js"
+app.use("/api/v1/users",FoodData)
 export default app

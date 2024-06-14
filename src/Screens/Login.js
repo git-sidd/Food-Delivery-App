@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  let navigate=useNavigate()
   const [credentials, setcredentials] = useState({email:"",password:""});
   const submitHandler = async (event) => {
   try {
@@ -17,7 +19,8 @@ export default function Login() {
     const json= await response.json();
     console.log(json);
     if(json.success){
-      alert("Login Successfully")
+     
+      navigate("/");
     }
     if(!json.success){
       alert("User doesn't Exists!")
