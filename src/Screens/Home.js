@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col relative">
+    <div className="flex flex-col relative bg-gradient-to-r from-yellow-100 to-red-200 ...">
       <Navbar />
       {/* carousal start */}
 

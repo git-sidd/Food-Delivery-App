@@ -6,7 +6,7 @@ import handleLogout from "../Screens/Logout";
 export default function Navbar() {
   return (
     <div>
-      <nav className="bg-gray-800">
+      <nav className="bg-red-900 bg-opacity-80">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -166,7 +166,14 @@ export default function Navbar() {
             >
               Home
             </Link>
-            <Link
+            {localStorage.getItem("authToken")?(<Link
+              to="/"
+              className="block rounded-md px-3 py-2 text-base font-medium  text-gray-300 hover:bg-gray-700 hover:text-white"
+            >
+              My Order
+            </Link>):""}
+            {(!localStorage.getItem("authToken"))?(<div > 
+              <Link
               to="/login"
               className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
             >
@@ -178,6 +185,14 @@ export default function Navbar() {
             >
               SignUp
             </Link>
+            </div>)
+            :(<Link
+              to="/signup"
+              onClick={handleLogout}
+              className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-red-700"
+            >
+              Logout
+            </Link>)}
           </div>
         </div>
       </nav>

@@ -34,8 +34,9 @@ export default function Signup() {
       setcredentials({...credentials,[event.target.name]:event.target.value})
   }
   return (
-    <div className=" ">
-      <div className="border-[2px] md:w-[50%] w-[80%] md:object-contain my-5 mx-auto bg-gradient-to-r from-purple-500 to-pink-50">
+   
+    <div className="">
+      <div className="border-[2px] md:w-[50%] w-[80%] md:object-contain my-5 mx-auto bg-gray-700 bg-opacity-30">
         <form onSubmit={submitHandler} className="flex flex-col mx-10">
           <h1 className="text-2xl font-bold text-black font-serif md:my-4 mb-2 mt-4 text-center ">
             Sign Up Form{" "}
@@ -49,7 +50,7 @@ export default function Signup() {
               name="name"
               value={credentials.name}
               onChange={onChangeHandler}
-              className="form-control  bg-gray-300 "
+              className="form-control  "
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
@@ -63,7 +64,7 @@ export default function Signup() {
               name="username"
               value={credentials.username}
               onChange={onChangeHandler}
-              className="form-control  bg-gray-300"
+              className="form-control "
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
@@ -81,7 +82,7 @@ export default function Signup() {
               name="email"
               value={credentials.email}
               onChange={onChangeHandler}
-              className="form-control bg-gray-300 "
+              className="form-control "
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
@@ -98,7 +99,7 @@ export default function Signup() {
               name="password"
               value={credentials.password}
               onChange={onChangeHandler}
-              className="form-control bg-gray-300"
+              className="form-control"
               id="exampleInputPassword1"
             />
           </div>
@@ -114,7 +115,7 @@ export default function Signup() {
             name="address"
             value={credentials.address}
             onChange={onChangeHandler}
-            className="form-control bg-gray-300" />
+            className="form-control" />
           </div>
 
           <div className=" flex  gap-4">

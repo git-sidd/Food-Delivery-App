@@ -36,7 +36,7 @@ export default function Login() {
   }
   return (
     <div className=" ">
-      <div className="border-[2px] md:w-[50%] w-[80%] md:object-contain my-5 mx-auto bg-gradient-to-r from-purple-500 to-pink-50">
+      <div className="border-[2px] md:w-[50%] w-[80%] md:object-contain my-5 mx-auto  bg-gray-700 bg-opacity-30">
         <form onSubmit={submitHandler} className="flex flex-col mx-10">
           <h1 className="text-2xl font-bold text-black font-serif md:my-4 mb-2 mt-4 text-center ">
              Login Form
@@ -56,7 +56,7 @@ export default function Login() {
               name="email"
               value={credentials.email}
               onChange={onChangeHandler}
-              className="form-control bg-gray-300 "
+              className="form-control  "
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
@@ -73,7 +73,7 @@ export default function Login() {
               name="password"
               value={credentials.password}
               onChange={onChangeHandler}
-              className="form-control bg-gray-300"
+              className="form-control "
               id="exampleInputPassword1"
             />
           </div>
