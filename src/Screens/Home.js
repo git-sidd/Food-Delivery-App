@@ -123,6 +123,7 @@ export default function Home() {
           </button>
         </div>
       </div>
+     
       {/* carousal end */}
       <div className=" mx-auto my-5">
         {category !== [] ? (

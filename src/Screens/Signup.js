@@ -27,7 +27,7 @@ export default function Signup() {
       alert("invalid credentials")
     }
   } catch (error) {
-    alert("Error in Storing Data in DB",error)
+    alert("Enter Valid Credentials",error)
   }
   };
   const onChangeHandler=(event)=>{
