@@ -94,7 +94,7 @@ export default function Navbar() {
                   {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                  
                   <div className="flex items-center justify-center gap-3 mt-1">
-                  {(localStorage.getItem('authToken'))?
+                  {(!localStorage.getItem('authToken'))?
                     (
                       <div className="flex items-center justify-center gap-3 mt-1"> 
                       <Link
